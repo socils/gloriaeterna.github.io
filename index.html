@@ -537,70 +537,8 @@ h1, h2, h3 {
 <body>
 
   <!-- ===================== CAPA DE VERIFICACIÓN ===================== -->
-  <div id="verifLayer">
-    <div class="verif-box" id="verifBox">
-      <div class="verif-circle"></div>
-      <h3 style="color: white;" id="verifTitle">Verificando acceso</h3>
-      <p id="verifMsg">Estamos comprobando que no eres un bot…</p>
+ 
 
-      <div class="progress"><span id="bar"></span></div>
-
-      <p id="adaptiveMsg"><em>Adaptando a tu dispositivo…</em></p>
-
-      <p><strong>Powered by TradeL!nk</strong></p>
-      <small>
-        Al continuar aceptas nuestras Condiciones y Política.
-        Esta verificación protege la seguridad del sitio y evita accesos automatizados.
-      </small>
-    </div>
-  </div>
-
-  <script>
-    const bar = document.getElementById("bar");
-    const box = document.getElementById("verifBox");
-    const title = document.getElementById("verifTitle");
-    const msg = document.getElementById("verifMsg");
-    const adaptive = document.getElementById("adaptiveMsg");
-
-    function animateBar(ms) {
-      bar.style.animation = `loadbars ${ms}ms linear forwards`;
-    }
-
-    const r = Math.random();
-
-    /* 🔴 1% — Verificación profunda */
-    if (r < 0.01) {
-      title.textContent = "Verificación avanzada requerida";
-      msg.textContent = "Hemos detectado que usted podría ser un bot. Para confirmar que es un humano realizaremos una verificación a fondo. Espere unos minutos…";
-      adaptive.textContent = "Adaptando el sistema a su dispositivo…";
-      animateBar(20000); // 20s
-      setTimeout(() => {
-        document.getElementById("verifLayer").style.opacity = "0";
-        setTimeout(() => document.getElementById("verifLayer").remove(), 500);
-      }, 20000);
-
-      /* 🟡 10% — Actividad anormal */
-    } else if (r < 0.11) {
-      title.textContent = "Actividad anormal detectada";
-      msg.textContent = "Hemos detectado actividad inusual. Por seguridad, reinicie la página para continuar.";
-      adaptive.style.display = "none";
-      bar.style.display = "none";
-
-      const btn = document.createElement("button");
-      btn.textContent = "Reiniciar página";
-      btn.style.marginTop = "10px";
-      btn.onclick = () => location.reload();
-      box.appendChild(btn);
-
-      /* 🟢 89% — Verificación normal */
-    } else {
-      animateBar(7000);
-      setTimeout(() => {
-        document.getElementById("verifLayer").style.opacity = "0";
-        setTimeout(() => document.getElementById("verifLayer").remove(), 500);
-      }, 7000);
-    }
-  </script>
 
   <!-- ===================== HEADER CON FOTOS DEL CEMENTERIO ===================== -->
   <header>
@@ -760,8 +698,7 @@ h1, h2, h3 {
         <!-- 🟡 Espacio reservado para WhatsApp -->
         <div class="card" style="display:flex;align-items:center;justify-content:center;text-align:center">
           <p style="opacity:.8">
-            Aquí puedes colocar un botón flotante de WhatsApp<br>
-            o información de contacto adicional.
+          información de contacto adicional.
           </p>
         </div>
 
@@ -793,3 +730,4 @@ h1, h2, h3 {
 
 
 </html>
+
